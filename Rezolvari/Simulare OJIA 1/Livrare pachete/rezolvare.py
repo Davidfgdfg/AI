@@ -31,14 +31,14 @@ test_id = test_data['id']
 test_data = test_data.drop(columns=['id'])
 
 predict_test = model.predict(test_data)
-# Subtask 1
+
 subtask1 = pd.DataFrame({
     'subtaskID': [1],
     'datapointID': [1],
     'answer': [mean_traffic_level]
 })
 
-# Subtask 2
+
 subtask2 = pd.DataFrame({
     'subtaskID': [2],
     'datapointID': [1],
@@ -51,8 +51,7 @@ subtask3 = pd.DataFrame({
     'answer': predict_test
 })
 
-# Concatenare
 output = pd.concat([subtask1, subtask2,subtask3], ignore_index=True)
 
-# Salvare CSV
+
 output.to_csv(r'Rezolvari\Simulare OJIA 1\Livrare pachete\submission.csv', index=False)
