@@ -58,6 +58,7 @@ mapping = {old: new for new, old in enumerate(cluster_means.index)}
 test['painter_id'] = test['cluster'].map(mapping)
 
 
+
 subtask2 = pd.DataFrame(
     {
         'SampleID': test['SampleID'],
