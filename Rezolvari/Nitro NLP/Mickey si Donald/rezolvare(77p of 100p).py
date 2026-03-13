@@ -10,9 +10,8 @@ import re
 import nltk
 from nltk.corpus import stopwords
 from sklearn.svm import LinearSVC
-train_data = pd.read_csv(r'Rezolvari\Nitro NLP\Mickey si Donald\train_data.csv')
-test_data = pd.read_csv(r'Rezolvari\Nitro NLP\Mickey si Donald\test_data.csv')
-
+test_data = pd.read_csv(r'Nitro NLP\Mickey si Donald\test_data.csv')
+train_data = pd.read_csv(r'Nitro NLP\Mickey si Donald\train_data.csv')
 stop_words = set(stopwords.words('romanian'))
 def clean_text(text):
     text = text.lower()                          # litere mici
@@ -57,5 +56,4 @@ subtask2 = pd.DataFrame({
 
 
 output = pd.concat([subtask1, subtask2], ignore_index=True)
-output.to_csv(r'Rezolvari\Nitro NLP\Mickey si Donald\submission.csv', index=False)
-
+output.to_csv(r'Nitro NLP\Mickey si Donald\submission.csv', index=False)
